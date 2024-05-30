@@ -1,0 +1,40 @@
+.branches-container {
+    margin: 60px 0;
+    .head-page {
+        text-align: center;
+        p.text {
+            color: #333;
+            margin-bottom: 50px;
+        }
+    }
+    .branches-board {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .branch-btn {
+            font-weight: 500;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-color: var(--primary-color);
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            cursor: pointer;
+            padding: 0.8rem 1rem;
+            text-transform: capitalize;
+            font-size: 1.2rem
+           
+        }
+    }
+   
+}
+
+@media (max-width : 767px) {
+ .branches-container .branches-board   .branch-btn {
+        font-size: 1rem;
+    }
+    
+}

@@ -1,0 +1,32 @@
+.model-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    label {
+        font-weight: 500;
+        text-transform: capitalize;
+        cursor: pointer;
+
+    }
+    input {
+        border: 1px solid #ddd;
+        outline: none;
+        padding: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 5px blue;
+        &.checked {
+            box-shadow: 0 0 5px green;
+        }
+        &.notchecked {
+            box-shadow: 0 0 5px red;
+        }
+        
+    }
+    input:disabled {
+        background-color: #ececec;
+        cursor: not-allowed;
+        box-shadow: none;
+    }
+
+}
