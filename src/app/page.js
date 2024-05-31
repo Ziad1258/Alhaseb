@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className="home-page container">
       <div className="head-page">
-        <h1 className="title">Welcome</h1>
+        <h1 className="title">Welcome to the app</h1>
         <h2 className="subtitle">
           Calculate your Baccalauréat average in Algeria
         </h2>
