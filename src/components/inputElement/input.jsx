@@ -1,4 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+"use client"
+
+import React, { useState, useRef,  } from "react";
+import { useParams } from "next/navigation";
 import "./input.css";
 
 export default function Input({ name, credit, id }) {
@@ -6,6 +9,7 @@ export default function Input({ name, credit, id }) {
   const inputRef = useRef(null);
 
 
+  const {lang} = useParams();
  
   const handleInput = (e) => {
     // Define the regular expression pattern
@@ -51,12 +55,14 @@ export default function Input({ name, credit, id }) {
   };
   
    
+
+
  
  
 
   return (
     <div className="model-input">
-      <label htmlFor={name}>{name} </label>
+      <label  htmlFor={name} style={lang == "ar" ? {direction : 'rtl'} : {direction : "ltr"} }> {name} </label>
       <input
         ref={inputRef}
         disabled={!isActive}

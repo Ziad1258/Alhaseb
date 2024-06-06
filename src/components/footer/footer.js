@@ -12,7 +12,7 @@ function Footer() {
       <div className="container footer-container">
         <p className="footer-text">
           Made with Love by{" "}
-          <Link href="/" className="creator">
+          <Link target="_blank" href="https://www.facebook.com/Hb9Li/" className="creator">
             Ferdjani Ziad
           </Link>{" "}
            © 2024

@@ -26,8 +26,9 @@ footer::before {
   height: 3px;
   width: 0;
   content: "";
-  animation: move-right 4s infinite ease-in-out backwards;
+  animation: move-right 4s infinite ease-in-out  ;
   background-color: var(--primary-color);
+
 }
 
 @keyframes move-right {
@@ -48,7 +49,7 @@ footer::after {
   height: 3px;
   width: 0;
   content: "";
-  animation: move-left 4s infinite ease-in-out backwards;
+  animation: move-left 4s infinite ease-in-out  ;
   background-color: var(--primary-color);
 }
 

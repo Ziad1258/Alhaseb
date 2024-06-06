@@ -1,7 +1,8 @@
 "use client";
 import { useParams } from "next/navigation";
 import React, { useContext } from "react";
-import { subjectsData } from "../../data";
+import { subjectsData } from "../../../../../data";
+import { formData } from "../../../../../data";
 import Input from "@/components/inputElement/input";
 
 import "./page.css";
@@ -10,6 +11,7 @@ import { resultContext } from "@/app/context/resultContext";
 
 export default function SubjectPage() {
   const branchName = useParams().branchID.split("%20").join(" ");
+  const {lang} = useParams();
   const {setResult} = useContext(resultContext);
   const handleclick = (e) => {
     const allInputs = document.querySelectorAll("input");
@@ -36,13 +38,16 @@ export default function SubjectPage() {
     const average = (totalScore / totalCredits).toFixed(2);
     setResult(Number(average))
   };
+
+  const mybranch = subjectsData.find((sub) => sub.subjectName.en === branchName).subjectName[lang];
+
   return (
     <div className="form-page container">
-      <h2 className="title">
-        Calculate your average for the Baccalaureate in <span>{branchName}</span>
+      <h2 className="title" style={lang == "ar" ? {direction : 'rtl'} : {direction : "ltr"}}>
+       {formData.title[lang]}  <span>{mybranch}</span>
       </h2>
       {subjectsData.map((subject, id) => {
-        if (subject.subjectName === branchName) {
+        if (subject.subjectName.en === branchName) {
           return (
               
               <form key={id} className="models-holder">
@@ -51,13 +56,13 @@ export default function SubjectPage() {
                     <Input
                       id={index}
                       key={index}
-                      name={model.name}
+                      name={model.name[lang]}
                       credit={model.credit}
                     />
                   );
                 })}
-                <Link href="/result" className="avg-btn" onClick={handleclick}>
-                  average
+                <Link href={`/${lang}/result`} className="avg-btn" onClick={handleclick}>
+                  {lang === "en" ? "Average" : lang === "fr" ? "Moyenne" : "المعدل"}
                 </Link>
               </form>
           );

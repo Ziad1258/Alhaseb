@@ -1,6 +1,6 @@
 import React from 'react'
 import "./SocialMediaIcons.css"
-import { socialMediaIcons } from '@/app/(pages)/data';
+import { socialMediaIcons } from '@/data';
 import Link from 'next/link';
 export default function SocialMediaIcons({name}) {
   return (
@@ -12,7 +12,7 @@ export default function SocialMediaIcons({name}) {
           className={`social-media-icon ${site.name}`}
           style={{ color: site.color }}
         >
-          <Link href="/"> {site.icon} </Link>
+          <Link target='_blank' href={`${site.link}`}> {site.icon} </Link>
         </button>
       );
     })}
